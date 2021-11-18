@@ -1,0 +1,4 @@
+enum ReactionType {
+    LIKE,
+    INSIGHTFUL,
+}
