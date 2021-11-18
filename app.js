@@ -1,6 +1,8 @@
-const express = require('express');
+const express =  require('express');
 const dotenv = require('dotenv');
-const blogController = require('./routes/blogController/blogController')
+const exceptionHandler = require('./exceptions/exceptionHandler');
+const blogController = require('./routes/blogController/blogController');
+
 const app = express();
 
 dotenv.config();
@@ -12,6 +14,8 @@ app.get('/', (req, res, next) => {
 });
 
 app.use('/blogs', blogController);
+
+app.use(exceptionHandler);
 
 app.listen(PORT, () => {
     console.log(`Server Started at port ${PORT}`);

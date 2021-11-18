@@ -1,3 +1,5 @@
+const errorFactory = require('../../exceptions/newErrorFactory');
+
 function getAllBlogs(req, res, next) {
     res.status(200).json({
         message: "Ok", data: []
